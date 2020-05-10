@@ -188,7 +188,7 @@ export { mySchema, myInitialValues, myValidation };
 ```jsx
 import React from 'react';
 import XForm from '@ilama007/x-form';
-import '@ilama007/dist/blueprint-light.css';
+import '@ilama007/x-form/dist/blueprint-light.css';
 import { mySchema, myInitialValues, myValidation } from './mySchema';
 
 const App = () => {
