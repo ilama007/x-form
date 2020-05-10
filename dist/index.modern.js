@@ -3,39 +3,64 @@ import PropTypes from 'prop-types';
 import { FormGroup, InputGroup, TextArea, RadioGroup, Radio, Checkbox, HTMLSelect, Button, Intent } from '@blueprintjs/core';
 import '@blueprintjs/core/lib/css/blueprint.css';
 
-const styles = {
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+var styles = {
   errorMsg: {
     color: 'red',
     fontSize: 12
   }
 };
-function XForm({
-  name,
-  okButtonTitle,
-  showResetButton,
-  schema,
-  initialValues,
-  validationHandler,
-  successHandler,
-  disableButtons
-}) {
-  const [values, setValues] = useState(initialValues);
-  const [errors, setErrors] = useState({});
-  const [submitComplete, setSubmitComplete] = useState(false);
+function XForm(_ref) {
+  var name = _ref.name,
+      okButtonTitle = _ref.okButtonTitle,
+      showResetButton = _ref.showResetButton,
+      schema = _ref.schema,
+      initialValues = _ref.initialValues,
+      validationHandler = _ref.validationHandler,
+      successHandler = _ref.successHandler,
+      disableButtons = _ref.disableButtons;
 
-  const handleSubmit = event => {
+  var _useState = useState(initialValues),
+      values = _useState[0],
+      setValues = _useState[1];
+
+  var _useState2 = useState({}),
+      errors = _useState2[0],
+      setErrors = _useState2[1];
+
+  var _useState3 = useState(false),
+      submitComplete = _useState3[0],
+      setSubmitComplete = _useState3[1];
+
+  var handleSubmit = function handleSubmit(event) {
     event.preventDefault();
     setSubmitComplete(false);
     validationHandler && setErrors(validationHandler(values));
     setSubmitComplete(true);
   };
 
-  const resetHandler = () => {
-    setValues({ ...initialValues
-    });
+  var resetHandler = function resetHandler() {
+    setValues(_extends({}, initialValues));
   };
 
-  useEffect(() => {
+  useEffect(function () {
     if (submitComplete) {
       if (Object.keys(errors).length === 0 && errors.constructor === Object) {
         successHandler(values);
@@ -43,34 +68,38 @@ function XForm({
     }
   }, [errors, submitComplete]);
 
-  const handleChange = event => {
+  var handleChange = function handleChange(event) {
     event.persist();
-    const elementType = event.target.type;
+    var elementType = event.target.type;
 
     if (elementType === 'checkbox') {
-      setValues(values => ({ ...values,
-        [event.target.name]: event.target.checked
-      }));
+      setValues(function (values) {
+        var _extends2;
+
+        return _extends(_extends({}, values), {}, (_extends2 = {}, _extends2[event.target.name] = event.target.checked, _extends2));
+      });
     } else {
-      setValues(values => ({ ...values,
-        [event.target.name]: event.target.value
-      }));
+      setValues(function (values) {
+        var _extends3;
+
+        return _extends(_extends({}, values), {}, (_extends3 = {}, _extends3[event.target.name] = event.target.value, _extends3));
+      });
     }
   };
 
   return /*#__PURE__*/React.createElement("form", {
     id: name,
     noValidate: true
-  }, schema.map(obj => {
+  }, schema.map(function (obj) {
     if (obj.type === 'email' || obj.type === 'text' || obj.type === 'password' || obj.type === 'tel') {
       return /*#__PURE__*/React.createElement(FormGroup, {
         key: obj.name,
         label: obj.label,
-        labelFor: `${name}__${obj.name}`,
+        labelFor: name + "__" + obj.name,
         labelInfo: obj.labelInfo || ''
       }, /*#__PURE__*/React.createElement(InputGroup, {
         large: true,
-        id: `${name}__${obj.name}`,
+        id: name + "__" + obj.name,
         name: obj.name,
         placeholder: obj.placeHolder || '',
         maxLength: obj.maxLength && obj.maxLength,
@@ -87,10 +116,10 @@ function XForm({
       return /*#__PURE__*/React.createElement(FormGroup, {
         key: obj.name,
         label: obj.label,
-        labelFor: `${name}__${obj.name}`,
+        labelFor: name + "__" + obj.name,
         labelInfo: obj.labelInfo || ''
       }, /*#__PURE__*/React.createElement(TextArea, {
-        id: `${name}__${obj.name}`,
+        id: name + "__" + obj.name,
         name: obj.name,
         text: values[obj.name],
         placeholder: obj.placeHolder || '',
@@ -113,12 +142,12 @@ function XForm({
         onChange: handleChange,
         name: obj.name,
         selectedValue: values[obj.name]
-      }, obj.options.map((option, index) => {
+      }, obj.options.map(function (option, index) {
         return /*#__PURE__*/React.createElement(Radio, {
           large: true,
           key: index,
           label: option.label,
-          className: `${name}__radio-${obj.name}`,
+          className: name + "__radio-" + obj.name,
           value: option.value
         });
       })), errors[obj.name] && /*#__PURE__*/React.createElement("p", {
@@ -131,7 +160,7 @@ function XForm({
         key: obj.name,
         label: obj.label,
         labelInfo: obj.labelInfo || ''
-      }, obj.options.map((option, index) => {
+      }, obj.options.map(function (option, index) {
         return /*#__PURE__*/React.createElement(Checkbox, {
           key: index,
           name: option.name,
