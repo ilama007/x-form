@@ -8,10 +8,9 @@ import {
   Radio,
   Checkbox,
   HTMLSelect,
-  Button,
-  Intent
+  Button
 } from '@blueprintjs/core';
-import '@blueprintjs/core/lib/css/blueprint.css';
+import './blueprint-light.css';
 
 const styles = {
   errorMsg: {
@@ -214,7 +213,6 @@ export default function XForm({
           className='btn-submit'
           onClick={handleSubmit}
           disabled={disableButtons}
-          intent={Intent.PRIMARY}
         >
           {okButtonTitle || 'SEND'}
         </Button>

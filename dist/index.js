@@ -4,7 +4,6 @@ var React = require('react');
 var React__default = _interopDefault(React);
 var PropTypes = _interopDefault(require('prop-types'));
 var core = require('@blueprintjs/core');
-require('@blueprintjs/core/lib/css/blueprint.css');
 
 function _extends() {
   _extends = Object.assign || function (target) {
@@ -194,8 +193,7 @@ function XForm(_ref) {
   }), /*#__PURE__*/React__default.createElement(core.FormGroup, null, ' ', /*#__PURE__*/React__default.createElement(core.Button, {
     className: "btn-submit",
     onClick: handleSubmit,
-    disabled: disableButtons,
-    intent: core.Intent.PRIMARY
+    disabled: disableButtons
   }, okButtonTitle || 'SEND'), showResetButton && /*#__PURE__*/React__default.createElement(core.Button, {
     className: "btn-reset",
     disabled: disableButtons,

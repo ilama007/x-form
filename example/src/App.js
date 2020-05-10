@@ -5,6 +5,7 @@ import React from 'react';
 
 // Use this import for local widget testinf
 import XForm from 'x-form';
+import 'x-form/dist/blueprint-light.css';
 
 import { mySchema, myInitialValues, myValidation } from './mySchema';
 

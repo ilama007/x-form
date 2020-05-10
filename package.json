@@ -1,6 +1,6 @@
 {
   "name": "@ilama007/x-form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple form widget.",
   "author": "Dilip Lama",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "microbundle-crl --no-compress --format modern,cjs && cp src/blueprint-light.css dist/",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepublish": "run-s build",
     "test": "run-s test:unit test:lint test:build",

@@ -12,7 +12,8 @@ npm install ilama007/x-form
 
 Quickly scaffold a simple form UI with appropriate validations. Since it is a part of DFA web framework, it makes use of BlueprintJS UI library.
 
-####Step 1
+### Step 1
+
 **Create a schema file e.g `mySchema.js` and copy the following schema.** The following schema is for demonstration purpose only so it shows all fields as required. Also it uses all available input types. Just copy what is required for your purpose.
 
 ```jsx
@@ -104,7 +105,8 @@ const mySchema = [
 export { mySchema };
 ```
 
-####Step 2
+### Step 2
+
 **Create a validation method** You can create a separate file for validation but for the demostration purpose lets keep it in the `mySchema.js`. Copy following codes after `mySchema` object.
 
 ```jsx
@@ -152,7 +154,8 @@ const myValidation = (values) => {
 export { mySchema,myValidation };
 ```
 
-####Step 3
+### Step 3
+
 **Create an object to initialize values** Place it after validation method
 
 ```jsx
@@ -178,12 +181,14 @@ const myInitialValues = {
 export { mySchema, myInitialValues, myValidation };
 ```
 
-####Step 4
+## Step 4
+
 **Call it from the component**
 
 ```jsx
 import React from 'react';
-import  XForm  from '@ilama007/x-form';
+import XForm from '@ilama007/x-form';
+import '@ilama007/dist/blueprint-light.css';
 import { mySchema, myInitialValues, myValidation } from './mySchema';
 
 const App = () => {
