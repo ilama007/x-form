@@ -260,11 +260,11 @@ XForm.propTypes = {
    */
   disableButtons: PropTypes.bool,
   /**
-   * This sets the title of the submit button. It can be used to change text when data is being processed.
+   * This sets the title of the SUBMIT button. It can be used to change text when data is being processed.
    */
   okButtonTitle: PropTypes.string,
   /**
-   * This boolean flag will hide/show reset button
+   * This boolean flag will hide/show RESET button
    */
   showResetButton: PropTypes.bool
 };
