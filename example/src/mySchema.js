@@ -2,7 +2,7 @@
 const mySchema = [
   {
     name: 'first_name',
-    label: 'First Name',
+    label: 'First Name<sup>&reg;</sup>',
     labelInfo: '(required)',
     type: 'text',
     placeHolder: 'John',
@@ -55,7 +55,7 @@ const mySchema = [
     type: 'radiogroup',
     options: [
       { label: 'Mac', value: 'mac' },
-      { label: 'Windows', value: 'windows' }
+      { label: 'Windows<sup>&reg;</sup>', value: 'windows' }
     ]
   },
   {
@@ -64,7 +64,7 @@ const mySchema = [
     labelInfo: 'Multi choice. At least one is required',
     type: 'checkboxgroup',
     options: [
-      { name: 'moc_email', label: 'Via Email' },
+      { name: 'moc_email', label: 'Via Email<sup>&reg;</sup>' },
       { name: 'moc_phone', label: 'Contact Via Phone' },
       { name: 'moc_mail', label: 'Traditional Mail' }
     ]
@@ -92,7 +92,7 @@ const myInitialValues = {
   description: '',
   operating_system: '',
   us_states: '',
-  moc_email: false,
+  moc_email: true,
   moc_phone: false,
   moc_mail: false
 };

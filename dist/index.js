@@ -96,7 +96,11 @@ function XForm(_ref) {
     if (obj.type === 'email' || obj.type === 'text' || obj.type === 'password' || obj.type === 'tel') {
       return /*#__PURE__*/React__default.createElement(core.FormGroup, {
         key: obj.name,
-        label: obj.label,
+        label: /*#__PURE__*/React__default.createElement("span", {
+          dangerouslySetInnerHTML: {
+            __html: obj.label
+          }
+        }),
         labelFor: name + "__" + obj.name,
         labelInfo: obj.labelInfo || ''
       }, /*#__PURE__*/React__default.createElement(core.InputGroup, {
@@ -117,7 +121,11 @@ function XForm(_ref) {
     if (obj.type === 'textarea') {
       return /*#__PURE__*/React__default.createElement(core.FormGroup, {
         key: obj.name,
-        label: obj.label,
+        label: /*#__PURE__*/React__default.createElement("span", {
+          dangerouslySetInnerHTML: {
+            __html: obj.label
+          }
+        }),
         labelFor: name + "__" + obj.name,
         labelInfo: obj.labelInfo || ''
       }, /*#__PURE__*/React__default.createElement(core.TextArea, {
@@ -138,7 +146,11 @@ function XForm(_ref) {
     if (obj.type === 'radiogroup') {
       return /*#__PURE__*/React__default.createElement(core.FormGroup, {
         key: obj.name,
-        label: obj.label,
+        label: /*#__PURE__*/React__default.createElement("span", {
+          dangerouslySetInnerHTML: {
+            __html: obj.label
+          }
+        }),
         labelInfo: obj.labelInfo || ''
       }, /*#__PURE__*/React__default.createElement(core.RadioGroup, {
         onChange: handleChange,
@@ -148,10 +160,13 @@ function XForm(_ref) {
         return /*#__PURE__*/React__default.createElement(core.Radio, {
           large: true,
           key: index,
-          label: option.label,
           className: name + "__radio-" + obj.name,
           value: option.value
-        });
+        }, /*#__PURE__*/React__default.createElement("span", {
+          dangerouslySetInnerHTML: {
+            __html: option.label
+          }
+        }));
       })), errors[obj.name] && /*#__PURE__*/React__default.createElement("p", {
         style: styles.errorMsg
       }, errors[obj.name]));
@@ -160,7 +175,11 @@ function XForm(_ref) {
     if (obj.type === 'checkboxgroup') {
       return /*#__PURE__*/React__default.createElement(core.FormGroup, {
         key: obj.name,
-        label: obj.label,
+        label: /*#__PURE__*/React__default.createElement("span", {
+          dangerouslySetInnerHTML: {
+            __html: obj.label
+          }
+        }),
         labelInfo: obj.labelInfo || ''
       }, obj.options.map(function (option, index) {
         return /*#__PURE__*/React__default.createElement(core.Checkbox, {
@@ -169,7 +188,11 @@ function XForm(_ref) {
           large: true,
           checked: values[option.name],
           onChange: handleChange
-        }, option.label);
+        }, /*#__PURE__*/React__default.createElement("span", {
+          dangerouslySetInnerHTML: {
+            __html: option.label
+          }
+        }));
       }), errors[obj.name] && /*#__PURE__*/React__default.createElement("p", {
         style: styles.errorMsg
       }, errors[obj.name]));
@@ -178,7 +201,11 @@ function XForm(_ref) {
     if (obj.type === 'selectlist') {
       return /*#__PURE__*/React__default.createElement(core.FormGroup, {
         key: obj.name,
-        label: obj.label,
+        label: /*#__PURE__*/React__default.createElement("span", {
+          dangerouslySetInnerHTML: {
+            __html: obj.label
+          }
+        }),
         labelInfo: obj.labelInfo || ''
       }, /*#__PURE__*/React__default.createElement(core.HTMLSelect, {
         name: obj.name,
@@ -194,7 +221,11 @@ function XForm(_ref) {
     className: "btn-submit",
     onClick: handleSubmit,
     disabled: disableButtons
-  }, okButtonTitle || 'SEND'), showResetButton && /*#__PURE__*/React__default.createElement(core.Button, {
+  }, /*#__PURE__*/React__default.createElement("span", {
+    dangerouslySetInnerHTML: {
+      __html: okButtonTitle || 'SEND'
+    }
+  })), showResetButton && /*#__PURE__*/React__default.createElement(core.Button, {
     className: "btn-reset",
     disabled: disableButtons,
     onClick: resetHandler

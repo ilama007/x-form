@@ -19,7 +19,7 @@ const App = () => {
     <div style={{ maxWidth: 700, margin: 'auto', marginTop: 100 }}>
       <XForm
         name='frm-survey'
-        okButtonTitle='SUBMIT'
+        okButtonTitle='SUBMIT<sup>&reg;</sup>'
         disableButtons={false}
         showResetButton={true}
         schema={mySchema}

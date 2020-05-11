@@ -80,7 +80,7 @@ export default function XForm({
           return (
             <FormGroup
               key={obj.name}
-              label={obj.label}
+              label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelFor={`${name}__${obj.name}`}
               labelInfo={obj.labelInfo || ''}
             >
@@ -106,7 +106,7 @@ export default function XForm({
           return (
             <FormGroup
               key={obj.name}
-              label={obj.label}
+              label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelFor={`${name}__${obj.name}`}
               labelInfo={obj.labelInfo || ''}
             >
@@ -132,7 +132,7 @@ export default function XForm({
           return (
             <FormGroup
               key={obj.name}
-              label={obj.label}
+              label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelInfo={obj.labelInfo || ''}
             >
               <RadioGroup
@@ -145,10 +145,13 @@ export default function XForm({
                     <Radio
                       large
                       key={index}
-                      label={option.label}
                       className={`${name}__radio-${obj.name}`}
                       value={option.value}
-                    />
+                    >
+                      <span
+                        dangerouslySetInnerHTML={{ __html: option.label }}
+                      />
+                    </Radio>
                   );
                 })}
               </RadioGroup>
@@ -163,7 +166,7 @@ export default function XForm({
           return (
             <FormGroup
               key={obj.name}
-              label={obj.label}
+              label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelInfo={obj.labelInfo || ''}
             >
               {obj.options.map((option, index) => {
@@ -175,7 +178,7 @@ export default function XForm({
                     checked={values[option.name]}
                     onChange={handleChange}
                   >
-                    {option.label}
+                    <span dangerouslySetInnerHTML={{ __html: option.label }} />
                   </Checkbox>
                 );
               })}
@@ -190,7 +193,7 @@ export default function XForm({
           return (
             <FormGroup
               key={obj.name}
-              label={obj.label}
+              label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelInfo={obj.labelInfo || ''}
             >
               <HTMLSelect
@@ -214,7 +217,7 @@ export default function XForm({
           onClick={handleSubmit}
           disabled={disableButtons}
         >
-          {okButtonTitle || 'SEND'}
+          <span dangerouslySetInnerHTML={{ __html: okButtonTitle || 'SEND' }} />
         </Button>
         {showResetButton && (
           <Button
