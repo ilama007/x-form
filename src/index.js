@@ -97,7 +97,9 @@ export default function XForm({
                 value={values[obj.name]}
               />
               {errors[obj.name] && (
-                <p style={styles.errorMsg}>{errors[obj.name]}</p>
+                <span style={styles.errorMsg} className='error-info'>
+                  {errors[obj.name]}
+                </span>
               )}
             </FormGroup>
           );
@@ -124,7 +126,9 @@ export default function XForm({
                 onChange={handleChange}
               />
               {errors[obj.name] && (
-                <p style={styles.errorMsg}>{errors[obj.name]}</p>
+                <span style={styles.errorMsg} className='error-info'>
+                  {errors[obj.name]}
+                </span>
               )}
             </FormGroup>
           );
@@ -159,7 +163,9 @@ export default function XForm({
                 })}
               </RadioGroup>
               {errors[obj.name] && (
-                <p style={styles.errorMsg}>{errors[obj.name]}</p>
+                <span style={styles.errorMsg} className='error-info'>
+                  {errors[obj.name]}
+                </span>
               )}
             </FormGroup>
           );
@@ -187,7 +193,9 @@ export default function XForm({
                 );
               })}
               {errors[obj.name] && (
-                <p style={styles.errorMsg}>{errors[obj.name]}</p>
+                <span style={styles.errorMsg} className='error-info'>
+                  {errors[obj.name]}
+                </span>
               )}
             </FormGroup>
           );
@@ -209,7 +217,9 @@ export default function XForm({
                 onChange={handleChange}
               />
               {errors[obj.name] && (
-                <p style={styles.errorMsg}>{errors[obj.name]}</p>
+                <span style={styles.errorMsg} className='error-info'>
+                  {errors[obj.name]}
+                </span>
               )}
             </FormGroup>
           );
