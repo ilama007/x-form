@@ -111,8 +111,9 @@ function XForm(_ref) {
         type: obj.type,
         onChange: handleChange,
         value: values[obj.name]
-      }), errors[obj.name] && /*#__PURE__*/React.createElement("p", {
-        style: styles.errorMsg
+      }), errors[obj.name] && /*#__PURE__*/React.createElement("span", {
+        style: styles.errorMsg,
+        className: "error-info"
       }, errors[obj.name]));
     }
 
@@ -137,8 +138,9 @@ function XForm(_ref) {
         growVertically: true,
         large: true,
         onChange: handleChange
-      }), errors[obj.name] && /*#__PURE__*/React.createElement("p", {
-        style: styles.errorMsg
+      }), errors[obj.name] && /*#__PURE__*/React.createElement("span", {
+        style: styles.errorMsg,
+        className: "error-info"
       }, errors[obj.name]));
     }
 
@@ -167,8 +169,9 @@ function XForm(_ref) {
             __html: option.label
           }
         }));
-      })), errors[obj.name] && /*#__PURE__*/React.createElement("p", {
-        style: styles.errorMsg
+      })), errors[obj.name] && /*#__PURE__*/React.createElement("span", {
+        style: styles.errorMsg,
+        className: "error-info"
       }, errors[obj.name]));
     }
 
@@ -194,8 +197,9 @@ function XForm(_ref) {
             __html: option.label
           }
         }));
-      }), errors[obj.name] && /*#__PURE__*/React.createElement("p", {
-        style: styles.errorMsg
+      }), errors[obj.name] && /*#__PURE__*/React.createElement("span", {
+        style: styles.errorMsg,
+        className: "error-info"
       }, errors[obj.name]));
     }
 
@@ -215,8 +219,9 @@ function XForm(_ref) {
         large: true,
         value: values[obj.name],
         onChange: handleChange
-      }), errors[obj.name] && /*#__PURE__*/React.createElement("p", {
-        style: styles.errorMsg
+      }), errors[obj.name] && /*#__PURE__*/React.createElement("span", {
+        style: styles.errorMsg,
+        className: "error-info"
       }, errors[obj.name]));
     }
   }), /*#__PURE__*/React.createElement(FormGroup, null, ' ', /*#__PURE__*/React.createElement(Button, {
