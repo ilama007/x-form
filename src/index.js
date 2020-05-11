@@ -83,6 +83,7 @@ export default function XForm({
               label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelFor={`${name}__${obj.name}`}
               labelInfo={obj.labelInfo || ''}
+              helperText={obj.helperText || ''}
             >
               <InputGroup
                 large
@@ -109,6 +110,7 @@ export default function XForm({
               label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelFor={`${name}__${obj.name}`}
               labelInfo={obj.labelInfo || ''}
+              helperText={obj.helperText || ''}
             >
               <TextArea
                 id={`${name}__${obj.name}`}
@@ -134,6 +136,7 @@ export default function XForm({
               key={obj.name}
               label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelInfo={obj.labelInfo || ''}
+              helperText={obj.helperText || ''}
             >
               <RadioGroup
                 onChange={handleChange}
@@ -168,6 +171,7 @@ export default function XForm({
               key={obj.name}
               label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelInfo={obj.labelInfo || ''}
+              helperText={obj.helperText || ''}
             >
               {obj.options.map((option, index) => {
                 return (
@@ -195,6 +199,7 @@ export default function XForm({
               key={obj.name}
               label={<span dangerouslySetInnerHTML={{ __html: obj.label }} />}
               labelInfo={obj.labelInfo || ''}
+              helperText={obj.helperText || ''}
             >
               <HTMLSelect
                 name={obj.name}

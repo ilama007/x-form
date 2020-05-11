@@ -7,7 +7,8 @@ const mySchema = [
     type: 'text',
     placeHolder: 'John',
     maxLength: 20,
-    minLength: 5
+    minLength: 5,
+    helperText: 'I am the helper text'
   },
   {
     name: 'last_name',
