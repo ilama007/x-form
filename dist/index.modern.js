@@ -99,7 +99,8 @@ function XForm(_ref) {
           }
         }),
         labelFor: name + "__" + obj.name,
-        labelInfo: obj.labelInfo || ''
+        labelInfo: obj.labelInfo || '',
+        helperText: obj.helperText || ''
       }, /*#__PURE__*/React.createElement(InputGroup, {
         large: true,
         id: name + "__" + obj.name,
@@ -124,7 +125,8 @@ function XForm(_ref) {
           }
         }),
         labelFor: name + "__" + obj.name,
-        labelInfo: obj.labelInfo || ''
+        labelInfo: obj.labelInfo || '',
+        helperText: obj.helperText || ''
       }, /*#__PURE__*/React.createElement(TextArea, {
         id: name + "__" + obj.name,
         name: obj.name,
@@ -148,7 +150,8 @@ function XForm(_ref) {
             __html: obj.label
           }
         }),
-        labelInfo: obj.labelInfo || ''
+        labelInfo: obj.labelInfo || '',
+        helperText: obj.helperText || ''
       }, /*#__PURE__*/React.createElement(RadioGroup, {
         onChange: handleChange,
         name: obj.name,
@@ -177,7 +180,8 @@ function XForm(_ref) {
             __html: obj.label
           }
         }),
-        labelInfo: obj.labelInfo || ''
+        labelInfo: obj.labelInfo || '',
+        helperText: obj.helperText || ''
       }, obj.options.map(function (option, index) {
         return /*#__PURE__*/React.createElement(Checkbox, {
           key: index,
@@ -203,7 +207,8 @@ function XForm(_ref) {
             __html: obj.label
           }
         }),
-        labelInfo: obj.labelInfo || ''
+        labelInfo: obj.labelInfo || '',
+        helperText: obj.helperText || ''
       }, /*#__PURE__*/React.createElement(HTMLSelect, {
         name: obj.name,
         options: obj.options,
